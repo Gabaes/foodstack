@@ -107,4 +107,4 @@ O sistema utiliza tabelas relacionais principais:
 
 Desenvolvido como projeto de estudo para aprofundamento em arquitetura Full-Stack Java e Angular.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]((http://linkedin.com/in/gabriel-guedes-de-oliveira-dev))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](http://linkedin.com/in/gabriel-guedes-de-oliveira-dev)
