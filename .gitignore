@@ -1,0 +1,20 @@
+# --- BACKEND (Java/Maven) ---
+foodstack-backend/target/
+foodstack-backend/.idea/
+foodstack-backend/.mvn/
+foodstack-backend/mvnw
+foodstack-backend/mvnw.cmd
+foodstack-backend/*.class
+foodstack-backend/HELP.md
+
+# --- FRONTEND (Angular/Node) ---
+foodstack-frontend/node_modules/
+foodstack-frontend/.angular/
+foodstack-frontend/dist/
+foodstack-frontend/.vscode/
+foodstack-frontend/npm-debug.log
+foodstack-frontend/yarn-error.log
+
+# --- SISTEMA ---
+.DS_Store
+Thumbs.db
