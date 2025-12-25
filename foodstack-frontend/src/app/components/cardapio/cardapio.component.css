@@ -1,0 +1,120 @@
+.cardapio-wrapper {
+  padding: 20px;
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.titulo-pagina {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ff6b00;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.categoria-section {
+  margin-bottom: 60px;
+}
+
+.titulo-categoria {
+  font-size: 1.5rem;
+  color: #333;
+  border-left: 5px solid #ff6b00;
+  padding-left: 15px;
+  margin-bottom: 25px;
+  text-transform: capitalize; 
+}
+
+.cardapio-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: flex-start;
+}
+
+.card-produto {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 280px;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px); 
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 180px;
+  background-color: #f0f0f0;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+  justify-content: space-between;
+}
+
+.texto h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.descricao {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.footer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; 
+}
+
+.preco {
+  color: #2e7d32; 
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.btn-adicionar {
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-adicionar:hover {
+  background-color: #e65100;
+}
+
+.loading-area {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.loading-area p {
+  font-size: 1.3rem;
+  color: #888;
+  font-style: italic;
+}

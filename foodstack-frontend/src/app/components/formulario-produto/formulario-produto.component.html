@@ -1,0 +1,48 @@
+<div class="admin-container">
+  <h2>Novo Produto</h2>
+
+  <div class="form-group">
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="produto.nome" name="nome" placeholder="Ex: X-Bacon">
+  </div>
+
+  <div class="form-group">
+    <label>Descrição:</label>
+    <textarea [(ngModel)]="produto.descricao" name="descricao" placeholder="Ingredientes..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Preço (R$):</label>
+    <input type="number" [(ngModel)]="produto.preco" name="preco">
+  </div>
+
+  <div class="form-group">
+    <label>Tipo:</label>
+    <select [(ngModel)]="produto.tipo" name="tipo">
+      <option value="LANCHE">Lanche</option>
+      <option value="BEBIDA">Bebida</option>
+      <option value="SOBREMESA">Sobremesa</option>
+      <option value="PIZZA">Pizza</option>
+      <option value="JAPONESA">Japonesa</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>URL da Imagem:</label>
+    <input type="text" [(ngModel)]="produto.imagemUrl" name="imagem" placeholder="https://...">
+  </div>
+
+  @if (produto.imagemUrl) {
+    <div class="preview-container" style="margin-top: 10px; text-align: center;">
+      <p>Pré-visualização:</p>
+      <img [src]="produto.imagemUrl" 
+           (error)="tratarErroImagem($event)" 
+           style="max-height: 150px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    </div>
+  }
+
+  <div class="acoes">
+    <button (click)="salvarProduto()" class="btn-salvar">Salvar Produto</button>
+    <a routerLink="/admin">Cancelar</a>
+  </div>
+</div>

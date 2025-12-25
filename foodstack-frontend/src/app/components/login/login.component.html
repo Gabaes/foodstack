@@ -1,0 +1,9 @@
+<div class="login-container">
+    <input type="email" [(ngModel)]="dadosLogin.email" name="email" placeholder="Email"> 
+    <input type="password" [(ngModel)]="dadosLogin.senha" name="senha" placeholder="Senha">
+    <button (click)="fazerLogin()">Entrar</button>
+
+    <p style="margin-top: 15px; font-size: 0.9em;">
+      Não tem conta? <a routerLink="/registrar" style="color: #ff6b00; font-weight: bold;">Crie agora!</a>
+    </p>
+</div>

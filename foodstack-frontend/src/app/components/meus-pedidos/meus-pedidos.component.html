@@ -1,0 +1,41 @@
+<div class="meus-pedidos-container">
+
+  <h2>Meus Pedidos</h2>
+
+  @if (pedidos$ | async; as listaPedidos) {
+
+    @for (pedido of listaPedidos; track pedido.id) {
+      
+      <div class="card-pedido">
+        
+        <div class="col-info">
+          <span class="pedido-id">Pedido #{{ pedido.id }}</span>
+          <span class="badge">{{ pedido.status }}</span>
+        </div>
+
+        <div class="col-itens">
+          @for (item of pedido.itens; track $index) {
+            <div class="item-linha">
+              <strong>{{ item.quantidade }}x</strong> {{ item.produto.nome }}
+            </div>
+          }
+        </div>
+
+        <div class="col-data">
+          {{ pedido.dataHoraDoPedido | date: 'dd/MM/yyyy HH:mm' }}
+        </div>
+
+      </div>
+
+    } @empty {
+      <div class="msg-vazio">
+        <p>Você ainda não fez nenhum pedido. 🍔</p>
+        <a routerLink="/">Ir para o Cardápio</a>
+      </div>
+    }
+
+  } @else {
+    <p class="carregando">Carregando seus pedidos...</p>
+  }
+
+</div>

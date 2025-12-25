@@ -1,0 +1,90 @@
+header {
+  background-color: #ff6b00; 
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+  color: white;
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.acoes-direita {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.carrinho-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+  
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  white-space: nowrap; 
+  
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carrinho-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.nome-usuario {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+button {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-entrar {
+  background-color: white;
+  color: #ff6b00;
+}
+
+.btn-sair {
+  background-color: #b71c1c;
+  color: white;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+}

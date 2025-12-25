@@ -1,0 +1,48 @@
+<div class="cardapio-wrapper">
+
+  <h2 class="titulo-pagina">Nosso Cardápio</h2>
+
+  @if (grupos.length > 0) {
+
+    @for (grupo of grupos; track grupo.categoria) {
+      
+      <div class="categoria-section">
+        
+        <h3 class="titulo-categoria">
+          {{ traducoesCategorias[grupo.categoria] || grupo.categoria }}
+        </h3>
+        
+        <div class="cardapio-container">
+          
+          @for (produto of grupo.produtos; track produto.id) {
+            <div class="card-produto">
+              <div class="img-wrapper">
+                <img [src]="produto.imagemUrl" (error)="tratarErroImagem($event)" alt="{{ produto.nome }}">
+              </div>
+              
+              <div class="info">
+                <div class="texto">
+                  <h4>{{ produto.nome }}</h4>
+                  <p class="descricao">{{ produto.descricao }}</p>
+                </div>
+        
+                <div class="footer-card">
+                  <span class="preco">R$ {{ produto.preco | number:'1.2-2' }}</span>
+                  <button class="btn-adicionar" (click)="adicionarAoCarrinho(produto)">Adicionar</button>
+                </div>
+              </div>
+            </div>
+          }
+
+        </div>
+      </div>
+
+    }
+
+  } @else {
+    <div class="loading-area">
+      <p>Carregando delícias...</p>
+    </div>
+  }
+
+</div>

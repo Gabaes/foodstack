@@ -1,0 +1,65 @@
+<div class="cozinha-container">
+  
+  <h2>👨‍🍳 Cozinha - Gestão de Pedidos</h2>
+
+  @if (pedidos$ | async; as listaPedidos) {
+    
+    <div class="status-bar">
+      <span>Pedidos na fila: <strong>{{ listaPedidos.length }}</strong></span>
+    </div>
+
+    <div class="grid-pedidos">
+      
+      @for (pedido of listaPedidos; track pedido.id) {
+        
+        <div class="card-pedido" [ngClass]="pedido.status">
+          
+          <div class="card-header">
+            <span class="pedido-id">#{{ pedido.id }}</span>
+            <span class="pedido-status">{{ pedido.status }}</span>
+          </div>
+          
+          <div class="card-cliente">
+            <p>👤 {{ pedido.usuario?.nome || 'Cliente' }}</p>
+            <small>🕒 {{ pedido.dataHoraDoPedido | date:'HH:mm' }}</small>
+          </div>
+
+          <div class="card-itens">
+            <ul>
+              @for (item of pedido.itens; track $index) {
+                <li><strong>{{ item.quantidade }}x</strong> {{ item.produto.nome }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="card-acoes">
+            @if (pedido.status === 'PENDENTE') {
+              <button (click)="mudarStatus(pedido, 'EM_PREPARO')" class="btn btn-preparar">
+                🔥 Iniciar Preparo
+              </button>
+            }
+
+            @if (pedido.status === 'EM_PREPARO') {
+              <button (click)="mudarStatus(pedido, 'CONCLUIDO')" class="btn btn-entregar">
+                🛵 Saiu p/ Entrega
+              </button>
+            }
+
+            @if (pedido.status === 'CONCLUIDO') {
+              <div class="msg-concluido">✅ Pedido Finalizado</div>
+            }
+          </div>
+
+        </div>
+      } @empty {
+        <div class="lista-vazia">
+          <p>Nenhum pedido na fila. Hora do café! ☕</p>
+        </div>
+      }
+
+    </div>
+
+  } @else {
+    <p class="carregando">⌛ Carregando pedidos...</p>
+  }
+</div>

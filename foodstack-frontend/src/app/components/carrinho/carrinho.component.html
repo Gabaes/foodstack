@@ -1,0 +1,27 @@
+<div class="container-carrinho">
+  <h2>Seu Pedido</h2>
+
+  @if (itensDoCarrinho.length > 0) {
+    
+    <div class="lista">
+      @for (item of itensDoCarrinho; track $index) {
+        <div class="item-linha">
+          <span>{{ item.nome }}</span>
+          <span>R$ {{ item.preco | number:'1.2-2' }}</span>
+
+          <button (click)="removerPedido($index)" class="btn-remover">Remover</button>
+        </div>
+      }
+    </div>
+
+    <div class="total">
+      <strong>Total: R$ {{ total | number:'1.2-2' }}</strong>
+    </div>
+
+    <button class="btn-finalizar" (click)="fecharPedido()">Finalizar Pedido</button>
+
+  } @else {
+    <p class="vazio">Seu carrinho está vazio 😢</p>
+    <a routerLink="/" class="btn-voltar">Voltar ao Cardápio</a>
+  }
+</div>
